@@ -23,7 +23,7 @@ func respondWithError(w http.ResponseWriter, code int, message string) {
 func respondWithJSON(w http.ResponseWriter, code int, payload interface{}) {
 	data, err := json.Marshal(payload)
 	if err != nil {
-		log.Println("Failed to marshal JSON response %v", payload)
+		log.Println(`Failed to marshal JSON response %v`, payload)
 		w.WriteHeader(500)
 		return
 	}
